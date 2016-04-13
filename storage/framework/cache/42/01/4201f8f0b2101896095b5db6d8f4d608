@@ -1,0 +1,63 @@
+1460543122s:1996:"a:6:{s:5:"mtime";i:1460530803;s:7:"content";s:921:"{% if base is empty %}
+    {% set base=( ''|app ) %}
+{% endif %}
+
+{% if ( total/perPage > 10 ) %}
+    {% set range=10 %}
+{% else %}
+    {% set range=(total/perPage)|round(0, 'ceil') %}
+{% endif %}
+
+{% if ( current == 1 ) %}
+    {% set prev=1 %}
+{% else %}
+    {% set prev=current-1 %}
+{% endif %}
+
+{% if ( current < last ) %}
+    {% set next=current+1 %}
+{% else %}
+    {% set next=last %}
+{% endif %}
+<div class="pagination pull-right">
+    <ul>
+        <li class="previous {% if ( current == 1 ) %}disabled{% endif %}"><a href="{{ (base ~ prev)|app }}" class="fui-arrow-left"></a></li>
+
+        {% for i in 1..range %}
+            <li {% if ( current==i ) %}{{ 'class="active"' }}{% endif %}><a href="{{ (base ~ i)|app }}">{{ i }}</a></li>
+        {% endfor %}
+
+        <li class="next {% if ( current == last ) %}disabled{% endif %}"><a href="{{ (base ~ next)|app }}" class="fui-arrow-right"></a></li>
+    </ul>
+</div>";s:7:"viewBag";a:0:{}s:8:"settings";a:1:{s:10:"components";a:0:{}}s:4:"code";N;s:6:"markup";s:921:"{% if base is empty %}
+    {% set base=( ''|app ) %}
+{% endif %}
+
+{% if ( total/perPage > 10 ) %}
+    {% set range=10 %}
+{% else %}
+    {% set range=(total/perPage)|round(0, 'ceil') %}
+{% endif %}
+
+{% if ( current == 1 ) %}
+    {% set prev=1 %}
+{% else %}
+    {% set prev=current-1 %}
+{% endif %}
+
+{% if ( current < last ) %}
+    {% set next=current+1 %}
+{% else %}
+    {% set next=last %}
+{% endif %}
+<div class="pagination pull-right">
+    <ul>
+        <li class="previous {% if ( current == 1 ) %}disabled{% endif %}"><a href="{{ (base ~ prev)|app }}" class="fui-arrow-left"></a></li>
+
+        {% for i in 1..range %}
+            <li {% if ( current==i ) %}{{ 'class="active"' }}{% endif %}><a href="{{ (base ~ i)|app }}">{{ i }}</a></li>
+        {% endfor %}
+
+        <li class="next {% if ( current == last ) %}disabled{% endif %}"><a href="{{ (base ~ next)|app }}" class="fui-arrow-right"></a></li>
+    </ul>
+</div>";}";

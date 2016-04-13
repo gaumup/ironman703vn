@@ -1,0 +1,37 @@
+1460543983s:2292:"a:6:{s:5:"mtime";i:1460541924;s:7:"content";s:1068:"<div class="blog-compact">
+    <a href="{{ postUrl }}">
+        <div class="post-image" style="background-image: url({{ post.featured_images[0].path }}); background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;">
+            <img style="display: none;" class="img-responsive" data-src="{{ post.featured_images[0].path }}" alt="{{ post.user.first_name }} {{ post.user.last_name }}">
+        </div>
+
+        <div class="blog-info">
+            <p class="blog-cate">{{ post.categories[0].name }}</p>
+            <p class="blog-post-date">{{ post.published_at|date('d-m-Y') }}</p>
+        </div>
+
+        <h5>{{ str_limit( post.title, 50, '...' ) }}</h5>
+        <p class="blog-creator">
+            <span><img src="{{ post.user.avatar.path|app }}" alt="" onerror="this.src='{{ ''|app }}'"></span> {{ post.user.first_name }} {{ post.user.last_name }}
+        </p>
+
+        <p class="blog-excerpt">{% if post.excerpt %}{{ str_limit( post.excerpt, 150, '...' ) }}{% else %}{{ str_limit( post.summary, 150, '...' ) }}{% endif %}</p>
+    </a>
+</div>";s:7:"viewBag";a:0:{}s:8:"settings";a:1:{s:10:"components";a:0:{}}s:4:"code";N;s:6:"markup";s:1068:"<div class="blog-compact">
+    <a href="{{ postUrl }}">
+        <div class="post-image" style="background-image: url({{ post.featured_images[0].path }}); background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;">
+            <img style="display: none;" class="img-responsive" data-src="{{ post.featured_images[0].path }}" alt="{{ post.user.first_name }} {{ post.user.last_name }}">
+        </div>
+
+        <div class="blog-info">
+            <p class="blog-cate">{{ post.categories[0].name }}</p>
+            <p class="blog-post-date">{{ post.published_at|date('d-m-Y') }}</p>
+        </div>
+
+        <h5>{{ str_limit( post.title, 50, '...' ) }}</h5>
+        <p class="blog-creator">
+            <span><img src="{{ post.user.avatar.path|app }}" alt="" onerror="this.src='{{ ''|app }}'"></span> {{ post.user.first_name }} {{ post.user.last_name }}
+        </p>
+
+        <p class="blog-excerpt">{% if post.excerpt %}{{ str_limit( post.excerpt, 150, '...' ) }}{% else %}{{ str_limit( post.summary, 150, '...' ) }}{% endif %}</p>
+    </a>
+</div>";}";
