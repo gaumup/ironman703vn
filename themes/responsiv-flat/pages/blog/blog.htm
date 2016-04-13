@@ -36,7 +36,7 @@ postsPerPage = 8
                 {% endfor %}
                 <!-- Pagination -->
                 {% partial "blog/pagination"
-                    base='blog?p='
+                    base='news?page='
                     total=posts.total()
                     perPage=posts.perPage()
                     first=""

@@ -21,12 +21,28 @@
 {% endif %}
 <div class="pagination pull-right">
     <ul>
-        <li class="previous {% if ( current == 1 ) %}disabled{% endif %}"><a href="{{ (base ~ prev)|app }}" class="fui-arrow-left"></a></li>
+        <li class="previous">
+            {% if current == 1 %}
+                <span class="fui-arrow-left"></span>
+            {% else %}
+                <a href="{{ (base ~ prev)|app }}" class="fui-arrow-left"></a>
+            {% endif %}
+        </li>
 
         {% for i in 1..range %}
-            <li {% if ( current==i ) %}{{ 'class="active"' }}{% endif %}><a href="{{ (base ~ i)|app }}">{{ i }}</a></li>
+            {% if current == i %}
+                <li class="active"><span>{{ i }}</span></li>
+            {% else %}
+                <li><a href="{{ (base ~ i)|app }}">{{ i }}</a></li>
+            {% endif %}
         {% endfor %}
 
-        <li class="next {% if ( current == last ) %}disabled{% endif %}"><a href="{{ (base ~ next)|app }}" class="fui-arrow-right"></a></li>
+        <li class="next">
+            {% if current == last %}
+                <span class="fui-arrow-right"></span>
+            {% else %}
+                <a href="{{ (base ~ next)|app }}" class="fui-arrow-right"></a>
+            {% endif %}
+        </li>
     </ul>
 </div>

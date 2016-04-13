@@ -63,45 +63,69 @@ class __TwigTemplate_8678596b6d418605f12ec771587f82298f51aff96fe4f0b92446a4eec91
         // line 22
         echo "<div class=\"pagination pull-right\">
     <ul>
-        <li class=\"previous ";
-        // line 24
+        <li class=\"previous\">
+            ";
+        // line 25
         if (((isset($context["current"]) ? $context["current"] : null) == 1)) {
-            echo "disabled";
+            // line 26
+            echo "                <span class=\"fui-arrow-left\"></span>
+            ";
+        } else {
+            // line 28
+            echo "                <a href=\"";
+            echo $this->env->getExtension('System')->appFilter(((isset($context["base"]) ? $context["base"] : null) . (isset($context["prev"]) ? $context["prev"] : null)));
+            echo "\" class=\"fui-arrow-left\"></a>
+            ";
         }
-        echo "\"><a href=\"";
-        echo $this->env->getExtension('System')->appFilter(((isset($context["base"]) ? $context["base"] : null) . (isset($context["prev"]) ? $context["prev"] : null)));
-        echo "\" class=\"fui-arrow-left\"></a></li>
+        // line 30
+        echo "        </li>
 
         ";
-        // line 26
+        // line 32
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(range(1, (isset($context["range"]) ? $context["range"] : null)));
         foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
-            // line 27
-            echo "            <li ";
+            // line 33
+            echo "            ";
             if (((isset($context["current"]) ? $context["current"] : null) == $context["i"])) {
-                echo "class=\"active\"";
+                // line 34
+                echo "                <li class=\"active\"><span>";
+                echo twig_escape_filter($this->env, $context["i"], "html", null, true);
+                echo "</span></li>
+            ";
+            } else {
+                // line 36
+                echo "                <li><a href=\"";
+                echo $this->env->getExtension('System')->appFilter(((isset($context["base"]) ? $context["base"] : null) . $context["i"]));
+                echo "\">";
+                echo twig_escape_filter($this->env, $context["i"], "html", null, true);
+                echo "</a></li>
+            ";
             }
-            echo "><a href=\"";
-            echo $this->env->getExtension('System')->appFilter(((isset($context["base"]) ? $context["base"] : null) . $context["i"]));
-            echo "\">";
-            echo twig_escape_filter($this->env, $context["i"], "html", null, true);
-            echo "</a></li>
-        ";
+            // line 38
+            echo "        ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 29
+        // line 39
         echo "
-        <li class=\"next ";
-        // line 30
+        <li class=\"next\">
+            ";
+        // line 41
         if (((isset($context["current"]) ? $context["current"] : null) == (isset($context["last"]) ? $context["last"] : null))) {
-            echo "disabled";
+            // line 42
+            echo "                <span class=\"fui-arrow-right\"></span>
+            ";
+        } else {
+            // line 44
+            echo "                <a href=\"";
+            echo $this->env->getExtension('System')->appFilter(((isset($context["base"]) ? $context["base"] : null) . (isset($context["next"]) ? $context["next"] : null)));
+            echo "\" class=\"fui-arrow-right\"></a>
+            ";
         }
-        echo "\"><a href=\"";
-        echo $this->env->getExtension('System')->appFilter(((isset($context["base"]) ? $context["base"] : null) . (isset($context["next"]) ? $context["next"] : null)));
-        echo "\" class=\"fui-arrow-right\"></a></li>
+        // line 46
+        echo "        </li>
     </ul>
 </div>";
     }
@@ -118,7 +142,7 @@ class __TwigTemplate_8678596b6d418605f12ec771587f82298f51aff96fe4f0b92446a4eec91
 
     public function getDebugInfo()
     {
-        return array (  99 => 30,  96 => 29,  81 => 27,  77 => 26,  68 => 24,  64 => 22,  60 => 20,  56 => 18,  54 => 17,  51 => 16,  47 => 14,  43 => 12,  41 => 11,  38 => 10,  34 => 8,  30 => 6,  28 => 5,  25 => 4,  21 => 2,  19 => 1,);
+        return array (  128 => 46,  122 => 44,  118 => 42,  116 => 41,  112 => 39,  106 => 38,  98 => 36,  92 => 34,  89 => 33,  85 => 32,  81 => 30,  75 => 28,  71 => 26,  69 => 25,  64 => 22,  60 => 20,  56 => 18,  54 => 17,  51 => 16,  47 => 14,  43 => 12,  41 => 11,  38 => 10,  34 => 8,  30 => 6,  28 => 5,  25 => 4,  21 => 2,  19 => 1,);
     }
 }
 /* {% if base is empty %}*/
@@ -144,12 +168,28 @@ class __TwigTemplate_8678596b6d418605f12ec771587f82298f51aff96fe4f0b92446a4eec91
 /* {% endif %}*/
 /* <div class="pagination pull-right">*/
 /*     <ul>*/
-/*         <li class="previous {% if ( current == 1 ) %}disabled{% endif %}"><a href="{{ (base ~ prev)|app }}" class="fui-arrow-left"></a></li>*/
+/*         <li class="previous">*/
+/*             {% if current == 1 %}*/
+/*                 <span class="fui-arrow-left"></span>*/
+/*             {% else %}*/
+/*                 <a href="{{ (base ~ prev)|app }}" class="fui-arrow-left"></a>*/
+/*             {% endif %}*/
+/*         </li>*/
 /* */
 /*         {% for i in 1..range %}*/
-/*             <li {% if ( current==i ) %}{{ 'class="active"' }}{% endif %}><a href="{{ (base ~ i)|app }}">{{ i }}</a></li>*/
+/*             {% if current == i %}*/
+/*                 <li class="active"><span>{{ i }}</span></li>*/
+/*             {% else %}*/
+/*                 <li><a href="{{ (base ~ i)|app }}">{{ i }}</a></li>*/
+/*             {% endif %}*/
 /*         {% endfor %}*/
 /* */
-/*         <li class="next {% if ( current == last ) %}disabled{% endif %}"><a href="{{ (base ~ next)|app }}" class="fui-arrow-right"></a></li>*/
+/*         <li class="next">*/
+/*             {% if current == last %}*/
+/*                 <span class="fui-arrow-right"></span>*/
+/*             {% else %}*/
+/*                 <a href="{{ (base ~ next)|app }}" class="fui-arrow-right"></a>*/
+/*             {% endif %}*/
+/*         </li>*/
 /*     </ul>*/
 /* </div>*/

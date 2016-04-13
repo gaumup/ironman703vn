@@ -1,4 +1,4 @@
-1460543436s:5182:"a:6:{s:5:"mtime";i:1460542772;s:7:"content";s:2465:"title = "Post"
+1460561427s:5182:"a:6:{s:5:"mtime";i:1460542772;s:7:"content";s:2465:"title = "Post"
 url = "/news/:cate/:slug"
 layout = "default"
 

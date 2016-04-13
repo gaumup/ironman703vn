@@ -15,19 +15,8 @@ class __TwigTemplate_a5efae1538b2bc9f5c6c6e000a7b52b5b50af240c2da51bd1f71096ea29
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        // line 2
-        $context["links"] = array("home" => array(0 => "home", 1 => "Trang Chủ"), "news" => array(0 => "blog/blog", 1 => "Tin Tức"), "gallery" => array(0 => "portfolio/portfolio", 1 => "Thư Viện"));
-        // line 9
-        echo "
-";
-        // line 30
-        echo "
-";
-        // line 31
-        $context["nav"] = $this;
-        // line 32
-        echo "
-<nav id=\"layout-nav\" class=\"navbar navbar-inverse navbar-fixed-top\" role=\"navigation\">
+        // line 1
+        echo "<nav id=\"layout-nav\" class=\"navbar navbar-inverse navbar-fixed-top\" role=\"navigation\">
     <div class=\"container\">
         <div class=\"navbar-header\">
             <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\".navbar-main-collapse\">
@@ -37,98 +26,40 @@ class __TwigTemplate_a5efae1538b2bc9f5c6c6e000a7b52b5b50af240c2da51bd1f71096ea29
                 <span class=\"icon-bar\"></span>
             </button>
             <a class=\"navbar-brand\" href=\"";
-        // line 42
+        // line 10
         echo $this->env->getExtension('CMS')->pageFilter("home");
         echo "\">IronMan70.3Vietnam</a>
         </div>
         <div class=\"collapse navbar-collapse navbar-main-collapse\">
             <ul class=\"nav navbar-nav navbar-right\">
-                ";
-        // line 46
-        echo $context["nav"]->getrender_menu((isset($context["links"]) ? $context["links"] : null));
-        echo "
+                <li ";
+        // line 14
+        echo ((($this->getAttribute($this->getAttribute((isset($context["this"]) ? $context["this"] : null), "page", array()), "id", array()) == "home")) ? ("class=\"active\"") : (""));
+        echo "><a href=\"";
+        echo $this->env->getExtension('CMS')->pageFilter("home");
+        echo "\" title=\"Trang Chủ\">Trang Chủ</a>
+                <li ";
+        // line 15
+        echo ((twig_in_filter($this->getAttribute($this->getAttribute((isset($context["this"]) ? $context["this"] : null), "page", array()), "id", array()), array(0 => "blog-blog", 1 => "blog-post"))) ? ("class=\"active\"") : (""));
+        echo "><a href=\"";
+        echo $this->env->getExtension('CMS')->pageFilter("blog/blog");
+        echo "\" title=\"Tin Tức\">Tin Tức</a>
+                <li ";
+        // line 16
+        echo ((($this->getAttribute($this->getAttribute((isset($context["this"]) ? $context["this"] : null), "page", array()), "id", array()) == "portfolio-portfolio")) ? ("class=\"active\"") : (""));
+        echo "><a href=\"";
+        echo $this->env->getExtension('CMS')->pageFilter("portfolio/portfolio");
+        echo "\" title=\"Thư Viện\">Thư Viện</a>
+                <li ";
+        // line 17
+        echo ((($this->getAttribute($this->getAttribute((isset($context["this"]) ? $context["this"] : null), "page", array()), "id", array()) == "games")) ? ("class=\"active\"") : (""));
+        echo "><a href=\"";
+        echo $this->env->getExtension('CMS')->pageFilter("games");
+        echo "\" title=\"Games\">Games</a>
             </ul>
         </div>
     </div>
 </nav>";
-    }
-
-    // line 10
-    public function getrender_menu($__links__ = null)
-    {
-        $context = $this->env->mergeGlobals(array(
-            "links" => $__links__,
-            "varargs" => func_num_args() > 1 ? array_slice(func_get_args(), 1) : array(),
-        ));
-
-        $blocks = array();
-
-        ob_start();
-        try {
-            // line 11
-            echo "    ";
-            $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable((isset($context["links"]) ? $context["links"] : null));
-            foreach ($context['_seq'] as $context["code"] => $context["link"]) {
-                // line 12
-                echo "        <li class=\"";
-                echo ((($context["code"] == (isset($context["currentPage"]) ? $context["currentPage"] : null))) ? ("active") : (""));
-                echo " ";
-                echo (($this->getAttribute($context["link"], "sublinks", array())) ? ("dropdown") : (""));
-                echo "\">
-            <a
-                href=\"";
-                // line 14
-                echo (($this->getAttribute($context["link"], "sublinks", array())) ? ("#") : ($this->env->getExtension('CMS')->pageFilter((($this->getAttribute($context["link"], "page", array())) ? ($this->getAttribute($context["link"], "page", array())) : ($this->getAttribute($context["link"], 0, array(), "array"))))));
-                echo "\"
-                ";
-                // line 15
-                if ($this->getAttribute($context["link"], "sublinks", array())) {
-                    echo "data-toggle=\"dropdown\"";
-                }
-                // line 16
-                echo "                class=\"";
-                echo (($this->getAttribute($context["link"], "sublinks", array())) ? ("dropdown-toggle") : (""));
-                echo "\"
-            >
-                ";
-                // line 18
-                echo twig_escape_filter($this->env, (($this->getAttribute($context["link"], "name", array())) ? ($this->getAttribute($context["link"], "name", array())) : ($this->getAttribute($context["link"], 1, array(), "array"))), "html", null, true);
-                echo "
-                ";
-                // line 19
-                if ($this->getAttribute($context["link"], "sublinks", array())) {
-                    echo "<span class=\"caret\"></span>";
-                }
-                // line 20
-                echo "            </a>
-            ";
-                // line 21
-                if ($this->getAttribute($context["link"], "sublinks", array())) {
-                    // line 22
-                    echo "                <span class=\"dropdown-arrow\"></span>
-                <ul class=\"dropdown-menu\">
-                    ";
-                    // line 24
-                    echo $this->getAttribute($this, "render_menu", array(0 => $this->getAttribute($context["link"], "sublinks", array())), "method");
-                    echo "
-                </ul>
-            ";
-                }
-                // line 27
-                echo "        </li>
-    ";
-            }
-            $_parent = $context['_parent'];
-            unset($context['_seq'], $context['_iterated'], $context['code'], $context['link'], $context['_parent'], $context['loop']);
-            $context = array_intersect_key($context, $_parent) + $_parent;
-        } catch (Exception $e) {
-            ob_end_clean();
-
-            throw $e;
-        }
-
-        return ('' === $tmp = ob_get_clean()) ? '' : new Twig_Markup($tmp, $this->env->getCharset());
     }
 
     public function getTemplateName()
@@ -143,41 +74,9 @@ class __TwigTemplate_a5efae1538b2bc9f5c6c6e000a7b52b5b50af240c2da51bd1f71096ea29
 
     public function getDebugInfo()
     {
-        return array (  119 => 27,  113 => 24,  109 => 22,  107 => 21,  104 => 20,  100 => 19,  96 => 18,  90 => 16,  86 => 15,  82 => 14,  74 => 12,  69 => 11,  57 => 10,  48 => 46,  41 => 42,  29 => 32,  27 => 31,  24 => 30,  21 => 9,  19 => 2,);
+        return array (  55 => 17,  49 => 16,  43 => 15,  37 => 14,  30 => 10,  19 => 1,);
     }
 }
-/* {# Note: Only one levels of sublinks are supported by Bootstrap 3 #}*/
-/* {% set*/
-/*     links = {*/
-/*         'home': ['home', 'Trang Chủ'],*/
-/*         'news': ['blog/blog', 'Tin Tức'],*/
-/*         'gallery': ['portfolio/portfolio', 'Thư Viện'],*/
-/*     }*/
-/* %}*/
-/* */
-/* {% macro render_menu(links) %}*/
-/*     {% for code, link in links %}*/
-/*         <li class="{{ code == currentPage ? 'active' }} {{ link.sublinks ? 'dropdown' }}">*/
-/*             <a*/
-/*                 href="{{ link.sublinks ? '#' : (link.page ?: link[0])|page }}"*/
-/*                 {% if link.sublinks %}data-toggle="dropdown"{% endif %}*/
-/*                 class="{{ link.sublinks ? 'dropdown-toggle' }}"*/
-/*             >*/
-/*                 {{ link.name ?: link[1] }}*/
-/*                 {% if link.sublinks %}<span class="caret"></span>{% endif %}*/
-/*             </a>*/
-/*             {% if link.sublinks %}*/
-/*                 <span class="dropdown-arrow"></span>*/
-/*                 <ul class="dropdown-menu">*/
-/*                     {{ _self.render_menu(link.sublinks) }}*/
-/*                 </ul>*/
-/*             {% endif %}*/
-/*         </li>*/
-/*     {% endfor %}*/
-/* {% endmacro %}*/
-/* */
-/* {% import _self as nav %}*/
-/* */
 /* <nav id="layout-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">*/
 /*     <div class="container">*/
 /*         <div class="navbar-header">*/
@@ -191,7 +90,10 @@ class __TwigTemplate_a5efae1538b2bc9f5c6c6e000a7b52b5b50af240c2da51bd1f71096ea29
 /*         </div>*/
 /*         <div class="collapse navbar-collapse navbar-main-collapse">*/
 /*             <ul class="nav navbar-nav navbar-right">*/
-/*                 {{ nav.render_menu(links) }}*/
+/*                 <li {{ this.page.id == 'home' ? 'class="active"' : '' }}><a href="{{ 'home'|page }}" title="Trang Chủ">Trang Chủ</a>*/
+/*                 <li {{ this.page.id in ['blog-blog', 'blog-post'] ? 'class="active"' : '' }}><a href="{{ 'blog/blog'|page }}" title="Tin Tức">Tin Tức</a>*/
+/*                 <li {{ this.page.id == 'portfolio-portfolio' ? 'class="active"' : '' }}><a href="{{ 'portfolio/portfolio'|page }}" title="Thư Viện">Thư Viện</a>*/
+/*                 <li {{ this.page.id == 'games' ? 'class="active"' : '' }}><a href="{{ 'games'|page }}" title="Games">Games</a>*/
 /*             </ul>*/
 /*         </div>*/
 /*     </div>*/

@@ -93,7 +93,7 @@ class __TwigTemplate_b76bb277572b0a0e9344d4d48bba6a7a7ea99b7c3ce5acadcf2ff853ed8
                 ";
             // line 29
             $context['__cms_partial_params'] = [];
-            $context['__cms_partial_params']['base'] = "blog?p="            ;
+            $context['__cms_partial_params']['base'] = "news?page="            ;
             $context['__cms_partial_params']['total'] = $this->getAttribute(            // line 31
 (isset($context["posts"]) ? $context["posts"] : null), "total", array(), "method")            ;
             $context['__cms_partial_params']['perPage'] = $this->getAttribute(            // line 32
@@ -179,7 +179,7 @@ class __TwigTemplate_b76bb277572b0a0e9344d4d48bba6a7a7ea99b7c3ce5acadcf2ff853ed8
 /*                 {% endfor %}*/
 /*                 <!-- Pagination -->*/
 /*                 {% partial "blog/pagination"*/
-/*                     base='blog?p='*/
+/*                     base='news?page='*/
 /*                     total=posts.total()*/
 /*                     perPage=posts.perPage()*/
 /*                     first=""*/
