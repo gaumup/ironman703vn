@@ -12,7 +12,36 @@
         selector: "[data-toggle=tooltip]"
     });
 
-    // $body.toggleClass( 'cover-layout', $body.height() < $(document).height() );
+    var fgame = $('#fgame');
+    var fgameWrapper = fgame.parent();
+    var fgameUpdate = function() {
+        var screenWidth = $body.width();
+        if ( screenWidth <= 667 ) {
+            var fgameScale = screenWidth/601;
+            fgame.css({
+                'transform': 'scale(' + fgameScale + ')',
+                '-moz-transform': 'scale(' + fgameScale + ')',
+                '-webkit-transform': 'scale(' + fgameScale + ')'
+            });
+            fgameWrapper.css({
+                height: fgameScale*401 + 'px'
+            });
+        }
+        else {
+            fgame.css({
+                'transform': 'scale(1)',
+                '-moz-transform': 'scale(1)',
+                '-webkit-transform': 'scale(1)'
+            });
+            fgameWrapper.css({
+                height: '411px'
+            });
+        }
+    }
+    fgameUpdate();
+    $(window).on('resize', function() {
+        fgameUpdate();
+    });
 
     // Focus state for append/prepend inputs
         $('.input-group').on('focus', '.form-control', function () {
