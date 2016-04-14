@@ -44,7 +44,7 @@ class __TwigTemplate_6b7f0bb36f2f502fffa46e55ac1640af50d74fa4bfc306aef9ed2cb75fa
             <div class=\"blog\">
                 <img src=\"";
         // line 15
-        echo $this->env->getExtension('System')->appFilter($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["post"]) ? $context["post"] : null), "user", array()), "avatar", array()), "path", array()));
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["post"]) ? $context["post"] : null), "user", array()), "avatar", array()), "path", array()), "html", null, true);
         echo "\" alt=\"\">
                 <div class=\"blog-desc\">
                     <h5>";
@@ -161,7 +161,7 @@ class __TwigTemplate_6b7f0bb36f2f502fffa46e55ac1640af50d74fa4bfc306aef9ed2cb75fa
 /*     <div class="row">*/
 /*         <div class="col-sm-9">*/
 /*             <div class="blog">*/
-/*                 <img src="{{ post.user.avatar.path|app }}" alt="">*/
+/*                 <img src="{{ post.user.avatar.path }}" alt="">*/
 /*                 <div class="blog-desc">*/
 /*                     <h5>{{ post.title }}</h5>*/
 /*                     <hr />*/

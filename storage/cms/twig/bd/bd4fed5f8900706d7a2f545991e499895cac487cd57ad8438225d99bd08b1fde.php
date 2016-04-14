@@ -57,7 +57,7 @@ class __TwigTemplate_1097d1ff7a009ddba47d38bfd056a73a51d21313d517f9150d966a6e9a9
         <p class=\"blog-creator\">
             <span><img src=\"";
         // line 15
-        echo $this->env->getExtension('System')->appFilter($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["post"]) ? $context["post"] : null), "user", array()), "avatar", array()), "path", array()));
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["post"]) ? $context["post"] : null), "user", array()), "avatar", array()), "path", array()), "html", null, true);
         echo "\" alt=\"\" onerror=\"this.src='";
         echo $this->env->getExtension('System')->appFilter("");
         echo "'\"></span> ";
@@ -108,7 +108,7 @@ class __TwigTemplate_1097d1ff7a009ddba47d38bfd056a73a51d21313d517f9150d966a6e9a9
 /* */
 /*         <h5>{{ str_limit( post.title, 50, '...' ) }}</h5>*/
 /*         <p class="blog-creator">*/
-/*             <span><img src="{{ post.user.avatar.path|app }}" alt="" onerror="this.src='{{ ''|app }}'"></span> {{ post.user.first_name }} {{ post.user.last_name }}*/
+/*             <span><img src="{{ post.user.avatar.path }}" alt="" onerror="this.src='{{ ''|app }}'"></span> {{ post.user.first_name }} {{ post.user.last_name }}*/
 /*         </p>*/
 /* */
 /*         <p class="blog-excerpt">{% if post.excerpt %}{{ str_limit( post.excerpt, 150, '...' ) }}{% else %}{{ str_limit( post.summary, 150, '...' ) }}{% endif %}</p>*/

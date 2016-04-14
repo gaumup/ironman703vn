@@ -41,7 +41,7 @@ class __TwigTemplate_b76bb277572b0a0e9344d4d48bba6a7a7ea99b7c3ce5acadcf2ff853ed8
                 echo "                    <div class=\"blog\">
                         <img src=\"";
                 // line 15
-                echo $this->env->getExtension('System')->appFilter($this->getAttribute($this->getAttribute($this->getAttribute($context["post"], "user", array()), "avatar", array()), "path", array()));
+                echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute($context["post"], "user", array()), "avatar", array()), "path", array()), "html", null, true);
                 echo "\" alt=\"\">
                         <div class=\"blog-desc\">
                             <h5>
@@ -164,7 +164,7 @@ class __TwigTemplate_b76bb277572b0a0e9344d4d48bba6a7a7ea99b7c3ce5acadcf2ff853ed8
 /*                 {% for post in posts %}*/
 /*                     {% set postUrl = ( 'news/' ~ post.categories[0].slug ~ '/' ~ post.slug )|app %}*/
 /*                     <div class="blog">*/
-/*                         <img src="{{ post.user.avatar.path|app }}" alt="">*/
+/*                         <img src="{{ post.user.avatar.path }}" alt="">*/
 /*                         <div class="blog-desc">*/
 /*                             <h5>*/
 /*                                 <a href="{{ postUrl }}">{{ post.title }}</a>*/

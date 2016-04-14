@@ -13029,7 +13029,7 @@ body.cover-layout #layout-footer {
   }
 }
 body {
-  padding-top: 90px;
+  padding-top: 96px;
   /*background-color: #34495e;*/
 }
 header#layout-header .navbar-brand {
@@ -13481,16 +13481,23 @@ header#layout-header .navbar-brand {
     left: 0;
     right: 0;
     margin: auto;
-    width: 100%;
-    max-width: 601px;
+    width: 611px;
+    height: 411px;
   }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 667px) {
   .games-wrapper {
-    min-height: 300px;
+    min-height: auto;
+    padding: 0;
   }
     .games-wrapper iframe {
-      max-width: 288px;
-      max-height: 192px;
+      position: relative;
+      top: 0;
+      left: 0;
+      transform-origin: 0 0;
+      width: 601px;
+      height: 401px;
+      display: block;
+      border: none;
     }
 }
 

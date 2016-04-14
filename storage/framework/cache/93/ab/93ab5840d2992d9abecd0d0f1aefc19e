@@ -1,4 +1,4 @@
-1460613735s:2684:"a:6:{s:5:"mtime";i:1460613133;s:7:"content";s:1264:"{% set postUrl = ( 'news/' ~ post.categories[0].slug ~ '/' ~ post.slug )|app %}
+1460647594s:2676:"a:6:{s:5:"mtime";i:1460623676;s:7:"content";s:1260:"{% set postUrl = ( 'news/' ~ post.categories[0].slug ~ '/' ~ post.slug )|app %}
 <div class="blog-compact">
     <a href="{{ postUrl }}">
         <div class="post-image" style="background-image: url({{ post.featured_images[0] ? post.featured_images[0].path : 'assets/images/logo-pattern.png'|theme }}); background-size: {{ post.featured_images[0] ? 'cover' : '150px auto' }}; background-position: 50% 50%; background-repeat: no-repeat;">
@@ -12,12 +12,12 @@
 
         <h5>{{ str_limit( post.title, 50, '...' ) }}</h5>
         <p class="blog-creator">
-            <span><img src="{{ post.user.avatar.path|app }}" alt="" onerror="this.src='{{ ''|app }}'"></span> {{ post.user.first_name }} {{ post.user.last_name }}
+            <span><img src="{{ post.user.avatar.path }}" alt="" onerror="this.src='{{ ''|app }}'"></span> {{ post.user.first_name }} {{ post.user.last_name }}
         </p>
 
         <p class="blog-excerpt">{% if post.excerpt %}{{ str_limit( post.excerpt, 150, '...' ) }}{% else %}{{ str_limit( post.summary, 150, '...' ) }}{% endif %}</p>
     </a>
-</div>";s:7:"viewBag";a:0:{}s:8:"settings";a:1:{s:10:"components";a:0:{}}s:4:"code";N;s:6:"markup";s:1264:"{% set postUrl = ( 'news/' ~ post.categories[0].slug ~ '/' ~ post.slug )|app %}
+</div>";s:7:"viewBag";a:0:{}s:8:"settings";a:1:{s:10:"components";a:0:{}}s:4:"code";N;s:6:"markup";s:1260:"{% set postUrl = ( 'news/' ~ post.categories[0].slug ~ '/' ~ post.slug )|app %}
 <div class="blog-compact">
     <a href="{{ postUrl }}">
         <div class="post-image" style="background-image: url({{ post.featured_images[0] ? post.featured_images[0].path : 'assets/images/logo-pattern.png'|theme }}); background-size: {{ post.featured_images[0] ? 'cover' : '150px auto' }}; background-position: 50% 50%; background-repeat: no-repeat;">
@@ -31,7 +31,7 @@
 
         <h5>{{ str_limit( post.title, 50, '...' ) }}</h5>
         <p class="blog-creator">
-            <span><img src="{{ post.user.avatar.path|app }}" alt="" onerror="this.src='{{ ''|app }}'"></span> {{ post.user.first_name }} {{ post.user.last_name }}
+            <span><img src="{{ post.user.avatar.path }}" alt="" onerror="this.src='{{ ''|app }}'"></span> {{ post.user.first_name }} {{ post.user.last_name }}
         </p>
 
         <p class="blog-excerpt">{% if post.excerpt %}{{ str_limit( post.excerpt, 150, '...' ) }}{% else %}{{ str_limit( post.summary, 150, '...' ) }}{% endif %}</p>
