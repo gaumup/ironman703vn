@@ -58,7 +58,6 @@
     right: 0;
 }
 .no-touch .owl-theme .owl-controls .owl-nav [class*=owl-]:hover {
-    background: #efefef;
     text-decoration: none
 }
 .owl-theme .owl-controls .owl-nav .disabled {

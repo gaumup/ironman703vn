@@ -25,8 +25,10 @@ class __TwigTemplate_1097d1ff7a009ddba47d38bfd056a73a51d21313d517f9150d966a6e9a9
         echo "\">
         <div class=\"post-image\" style=\"background-image: url(";
         // line 4
-        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["post"]) ? $context["post"] : null), "featured_images", array()), 0, array(), "array"), "path", array()), "html", null, true);
-        echo "); background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;\">
+        echo twig_escape_filter($this->env, (($this->getAttribute($this->getAttribute((isset($context["post"]) ? $context["post"] : null), "featured_images", array()), 0, array(), "array")) ? ($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["post"]) ? $context["post"] : null), "featured_images", array()), 0, array(), "array"), "path", array())) : ($this->env->getExtension('CMS')->themeFilter("assets/images/logo-pattern.png"))), "html", null, true);
+        echo "); background-size: ";
+        echo (($this->getAttribute($this->getAttribute((isset($context["post"]) ? $context["post"] : null), "featured_images", array()), 0, array(), "array")) ? ("cover") : ("150px auto"));
+        echo "; background-position: 50% 50%; background-repeat: no-repeat;\">
             <img style=\"display: none;\" class=\"img-responsive\" data-src=\"";
         // line 5
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["post"]) ? $context["post"] : null), "featured_images", array()), 0, array(), "array"), "path", array()), "html", null, true);
@@ -89,13 +91,13 @@ class __TwigTemplate_1097d1ff7a009ddba47d38bfd056a73a51d21313d517f9150d966a6e9a9
 
     public function getDebugInfo()
     {
-        return array (  70 => 18,  58 => 15,  53 => 13,  47 => 10,  43 => 9,  32 => 5,  28 => 4,  24 => 3,  21 => 2,  19 => 1,);
+        return array (  72 => 18,  60 => 15,  55 => 13,  49 => 10,  45 => 9,  34 => 5,  28 => 4,  24 => 3,  21 => 2,  19 => 1,);
     }
 }
 /* {% set postUrl = ( 'news/' ~ post.categories[0].slug ~ '/' ~ post.slug )|app %}*/
 /* <div class="blog-compact">*/
 /*     <a href="{{ postUrl }}">*/
-/*         <div class="post-image" style="background-image: url({{ post.featured_images[0].path }}); background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;">*/
+/*         <div class="post-image" style="background-image: url({{ post.featured_images[0] ? post.featured_images[0].path : 'assets/images/logo-pattern.png'|theme }}); background-size: {{ post.featured_images[0] ? 'cover' : '150px auto' }}; background-position: 50% 50%; background-repeat: no-repeat;">*/
 /*             <img style="display: none;" class="img-responsive" data-src="{{ post.featured_images[0].path }}" alt="{{ post.user.first_name }} {{ post.user.last_name }}">*/
 /*         </div>*/
 /* */
