@@ -16,17 +16,19 @@ class __TwigTemplate_1097d1ff7a009ddba47d38bfd056a73a51d21313d517f9150d966a6e9a9
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 1
+        $context["postUrl"] = $this->env->getExtension('System')->appFilter(((("news/" . $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["post"]) ? $context["post"] : null), "categories", array()), 0, array(), "array"), "slug", array())) . "/") . $this->getAttribute((isset($context["post"]) ? $context["post"] : null), "slug", array())));
+        // line 2
         echo "<div class=\"blog-compact\">
     <a href=\"";
-        // line 2
+        // line 3
         echo twig_escape_filter($this->env, (isset($context["postUrl"]) ? $context["postUrl"] : null), "html", null, true);
         echo "\">
         <div class=\"post-image\" style=\"background-image: url(";
-        // line 3
+        // line 4
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["post"]) ? $context["post"] : null), "featured_images", array()), 0, array(), "array"), "path", array()), "html", null, true);
         echo "); background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;\">
             <img style=\"display: none;\" class=\"img-responsive\" data-src=\"";
-        // line 4
+        // line 5
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["post"]) ? $context["post"] : null), "featured_images", array()), 0, array(), "array"), "path", array()), "html", null, true);
         echo "\" alt=\"";
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["post"]) ? $context["post"] : null), "user", array()), "first_name", array()), "html", null, true);
@@ -37,22 +39,22 @@ class __TwigTemplate_1097d1ff7a009ddba47d38bfd056a73a51d21313d517f9150d966a6e9a9
 
         <div class=\"blog-info\">
             <p class=\"blog-cate\">";
-        // line 8
+        // line 9
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["post"]) ? $context["post"] : null), "categories", array()), 0, array(), "array"), "name", array()), "html", null, true);
         echo "</p>
             <p class=\"blog-post-date\">";
-        // line 9
+        // line 10
         echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["post"]) ? $context["post"] : null), "published_at", array()), "d-m-Y"), "html", null, true);
         echo "</p>
         </div>
 
         <h5>";
-        // line 12
+        // line 13
         echo call_user_func_array($this->env->getFunction('str_limit')->getCallable(), array("limit", $this->getAttribute((isset($context["post"]) ? $context["post"] : null), "title", array()), 50, "..."));
         echo "</h5>
         <p class=\"blog-creator\">
             <span><img src=\"";
-        // line 14
+        // line 15
         echo $this->env->getExtension('System')->appFilter($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["post"]) ? $context["post"] : null), "user", array()), "avatar", array()), "path", array()));
         echo "\" alt=\"\" onerror=\"this.src='";
         echo $this->env->getExtension('System')->appFilter("");
@@ -64,7 +66,7 @@ class __TwigTemplate_1097d1ff7a009ddba47d38bfd056a73a51d21313d517f9150d966a6e9a9
         </p>
 
         <p class=\"blog-excerpt\">";
-        // line 17
+        // line 18
         if ($this->getAttribute((isset($context["post"]) ? $context["post"] : null), "excerpt", array())) {
             echo call_user_func_array($this->env->getFunction('str_limit')->getCallable(), array("limit", $this->getAttribute((isset($context["post"]) ? $context["post"] : null), "excerpt", array()), 150, "..."));
         } else {
@@ -87,9 +89,10 @@ class __TwigTemplate_1097d1ff7a009ddba47d38bfd056a73a51d21313d517f9150d966a6e9a9
 
     public function getDebugInfo()
     {
-        return array (  68 => 17,  56 => 14,  51 => 12,  45 => 9,  41 => 8,  30 => 4,  26 => 3,  22 => 2,  19 => 1,);
+        return array (  70 => 18,  58 => 15,  53 => 13,  47 => 10,  43 => 9,  32 => 5,  28 => 4,  24 => 3,  21 => 2,  19 => 1,);
     }
 }
+/* {% set postUrl = ( 'news/' ~ post.categories[0].slug ~ '/' ~ post.slug )|app %}*/
 /* <div class="blog-compact">*/
 /*     <a href="{{ postUrl }}">*/
 /*         <div class="post-image" style="background-image: url({{ post.featured_images[0].path }}); background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;">*/

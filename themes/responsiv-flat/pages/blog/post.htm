@@ -12,7 +12,11 @@ categoryFilter = {{ ":cate" }}
 noPostsMessage = "No posts found."
 sortOrder = "starred desc, published_at desc"
 ==
-<section id="layout-title" style="background: url({{ post.featured_images[0].path }}) no-repeat center center; background-size: cover;">
+{% if post.featured_images[0]  %}
+    <section id="layout-title" style="background: url({{ post.featured_images[0].path }}) no-repeat center center; background-size: cover;">
+{% else %}
+    <section id="layout-title" style="background: #efefef url({{ 'assets/images/logo-pattern.png'|theme }}) repeat 0 0 ;">
+{% endif %}
     <div class="container">
         <h3>{{ post.title }}</h3>
     </div>
@@ -27,8 +31,8 @@ sortOrder = "starred desc, published_at desc"
                     <h5>{{ post.title }}</h5>
                     <hr />
                     <p><strong>{{ post.excerpt }}</strong></p>
-                    <p class="text-muted">{{ post.user.first_name }} {{ post.user.last_name }}</span>&nbsp;/&nbsp;{{ post.published_at|date('d-m-Y') }}</p>
-                    <a href="{{ 'blog/post'|page }}"><img class="img-responsive" src="{{ post.featured_images[0].path }}" data-src="{{ post.featured_images[0].path }}" alt=""></a>
+                    <p class="text-muted"><span>{{ post.user.first_name }} {{ post.user.last_name }}</span>&nbsp;/&nbsp;{{ post.published_at|date('d-m-Y') }}</p>
+                    <p class="featured-image"><a href="{{ 'blog/post'|page }}"><img class="img-responsive" src="{{ post.featured_images[0].path }}" data-src="{{ post.featured_images[0].path }}" alt=""></a></p>
                     <div class="html-content">
                         {{ post.content_html|raw }}
                     </div>
@@ -46,21 +50,6 @@ sortOrder = "starred desc, published_at desc"
                 </div>
             {% endif %}
 
-            <!-- Pagination -->
-            <!-- <ul class="pager pull-right">
-                <li class="previous">
-                    <a href="#">
-                        <span class="fui-arrow-left"></span>
-                        Previous
-                    </a>
-                </li>
-                <li class="next">
-                    <a href="#">
-                        Next
-                        <span class="fui-arrow-right"></span>
-                    </a>
-                </li>
-            </ul> -->
             <div class="clearfix"></div>
 
         </div>

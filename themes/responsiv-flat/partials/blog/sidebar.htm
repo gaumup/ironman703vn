@@ -1,11 +1,13 @@
-<!-- Search -->
-<form role="form">
-    <div class="well">
-        <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search posts...">
-            <span class="input-group-btn">
-                <button class="btn btn-primary" type="button"><i class="icon-search"></i></button>
-            </span>
+<div class="blog-sidebar">
+    <!-- Search -->
+    <form role="form" action="{{ 'news'|app }}" method="get">
+        <div class="well">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Tìm Kiếm Bài Viết..." name="s" value="{{ searchQuery }}" />
+                <span class="input-group-btn">
+                    <button class="btn btn-primary" type="button"><i class="icon-search"></i></button>
+                </span>
+            </div>
         </div>
-    </div>
-</form>
+    </form>
+</div>

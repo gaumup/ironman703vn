@@ -16,12 +16,23 @@ class __TwigTemplate_6b7f0bb36f2f502fffa46e55ac1640af50d74fa4bfc306aef9ed2cb75fa
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 1
-        echo "<section id=\"layout-title\" style=\"background: url(";
-        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["post"]) ? $context["post"] : null), "featured_images", array()), 0, array(), "array"), "path", array()), "html", null, true);
-        echo ") no-repeat center center; background-size: cover;\">
-    <div class=\"container\">
+        if ($this->getAttribute($this->getAttribute((isset($context["post"]) ? $context["post"] : null), "featured_images", array()), 0, array(), "array")) {
+            // line 2
+            echo "    <section id=\"layout-title\" style=\"background: url(";
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["post"]) ? $context["post"] : null), "featured_images", array()), 0, array(), "array"), "path", array()), "html", null, true);
+            echo ") no-repeat center center; background-size: cover;\">
+";
+        } else {
+            // line 4
+            echo "    <section id=\"layout-title\" style=\"background: #efefef url(";
+            echo $this->env->getExtension('CMS')->themeFilter("assets/images/logo-pattern.png");
+            echo ") repeat 0 0 ;\">
+";
+        }
+        // line 6
+        echo "    <div class=\"container\">
         <h3>";
-        // line 3
+        // line 7
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["post"]) ? $context["post"] : null), "title", array()), "html", null, true);
         echo "</h3>
     </div>
@@ -32,38 +43,38 @@ class __TwigTemplate_6b7f0bb36f2f502fffa46e55ac1640af50d74fa4bfc306aef9ed2cb75fa
         <div class=\"col-sm-9\">
             <div class=\"blog\">
                 <img src=\"";
-        // line 11
+        // line 15
         echo $this->env->getExtension('System')->appFilter($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["post"]) ? $context["post"] : null), "user", array()), "avatar", array()), "path", array()));
         echo "\" alt=\"\">
                 <div class=\"blog-desc\">
                     <h5>";
-        // line 13
+        // line 17
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["post"]) ? $context["post"] : null), "title", array()), "html", null, true);
         echo "</h5>
                     <hr />
                     <p><strong>";
-        // line 15
+        // line 19
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["post"]) ? $context["post"] : null), "excerpt", array()), "html", null, true);
         echo "</strong></p>
-                    <p class=\"text-muted\">";
-        // line 16
+                    <p class=\"text-muted\"><span>";
+        // line 20
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["post"]) ? $context["post"] : null), "user", array()), "first_name", array()), "html", null, true);
         echo " ";
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["post"]) ? $context["post"] : null), "user", array()), "last_name", array()), "html", null, true);
         echo "</span>&nbsp;/&nbsp;";
         echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["post"]) ? $context["post"] : null), "published_at", array()), "d-m-Y"), "html", null, true);
         echo "</p>
-                    <a href=\"";
-        // line 17
+                    <p class=\"featured-image\"><a href=\"";
+        // line 21
         echo $this->env->getExtension('CMS')->pageFilter("blog/post");
         echo "\"><img class=\"img-responsive\" src=\"";
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["post"]) ? $context["post"] : null), "featured_images", array()), 0, array(), "array"), "path", array()), "html", null, true);
         echo "\" data-src=\"";
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["post"]) ? $context["post"] : null), "featured_images", array()), 0, array(), "array"), "path", array()), "html", null, true);
-        echo "\" alt=\"\"></a>
+        echo "\" alt=\"\"></a></p>
                     <div class=\"html-content\">
                         ";
-        // line 19
+        // line 23
         echo $this->getAttribute((isset($context["post"]) ? $context["post"] : null), "content_html", array());
         echo "
                     </div>
@@ -71,65 +82,50 @@ class __TwigTemplate_6b7f0bb36f2f502fffa46e55ac1640af50d74fa4bfc306aef9ed2cb75fa
             </div>
 
             ";
-        // line 24
+        // line 28
         if (($this->getAttribute((isset($context["posts"]) ? $context["posts"] : null), "count", array()) > 0)) {
-            // line 25
+            // line 29
             echo "                <h4 class=\"headline\"><span>Các Tin Liên Quan</span></h4>
                 <div class=\"blog-roll\">
                 ";
-            // line 27
+            // line 31
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable((isset($context["posts"]) ? $context["posts"] : null));
             foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
-                // line 28
+                // line 32
                 echo "                    ";
                 $context["postUrl"] = $this->env->getExtension('System')->appFilter(((("news/" . $this->getAttribute($this->getAttribute($this->getAttribute($context["post"], "categories", array()), 0, array(), "array"), "slug", array())) . "/") . $this->getAttribute($context["post"], "slug", array())));
-                // line 29
+                // line 33
                 echo "
                     ";
-                // line 30
+                // line 34
                 $context['__cms_partial_params'] = [];
                 $context['__cms_partial_params']['post'] = $context["post"]                ;
                 echo $this->env->getExtension('CMS')->partialFunction("blog/blog-compact"                , $context['__cms_partial_params']                );
                 unset($context['__cms_partial_params']);
-                // line 31
+                // line 35
                 echo "                ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 32
+            // line 36
             echo "                </div>
             ";
         }
-        // line 34
+        // line 38
         echo "
-            <!-- Pagination -->
-            <!-- <ul class=\"pager pull-right\">
-                <li class=\"previous\">
-                    <a href=\"#\">
-                        <span class=\"fui-arrow-left\"></span>
-                        Previous
-                    </a>
-                </li>
-                <li class=\"next\">
-                    <a href=\"#\">
-                        Next
-                        <span class=\"fui-arrow-right\"></span>
-                    </a>
-                </li>
-            </ul> -->
             <div class=\"clearfix\"></div>
 
         </div>
         <div class=\"col-sm-3\">
 
             ";
-        // line 55
+        // line 44
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('CMS')->partialFunction("blog/sidebar"        , $context['__cms_partial_params']        );
         unset($context['__cms_partial_params']);
-        // line 56
+        // line 45
         echo "
         </div>
     </div>
@@ -148,10 +144,14 @@ class __TwigTemplate_6b7f0bb36f2f502fffa46e55ac1640af50d74fa4bfc306aef9ed2cb75fa
 
     public function getDebugInfo()
     {
-        return array (  133 => 56,  129 => 55,  106 => 34,  102 => 32,  96 => 31,  91 => 30,  88 => 29,  85 => 28,  81 => 27,  77 => 25,  75 => 24,  67 => 19,  58 => 17,  50 => 16,  46 => 15,  41 => 13,  36 => 11,  25 => 3,  19 => 1,);
+        return array (  129 => 45,  125 => 44,  117 => 38,  113 => 36,  107 => 35,  102 => 34,  99 => 33,  96 => 32,  92 => 31,  88 => 29,  86 => 28,  78 => 23,  69 => 21,  61 => 20,  57 => 19,  52 => 17,  47 => 15,  36 => 7,  33 => 6,  27 => 4,  21 => 2,  19 => 1,);
     }
 }
-/* <section id="layout-title" style="background: url({{ post.featured_images[0].path }}) no-repeat center center; background-size: cover;">*/
+/* {% if post.featured_images[0]  %}*/
+/*     <section id="layout-title" style="background: url({{ post.featured_images[0].path }}) no-repeat center center; background-size: cover;">*/
+/* {% else %}*/
+/*     <section id="layout-title" style="background: #efefef url({{ 'assets/images/logo-pattern.png'|theme }}) repeat 0 0 ;">*/
+/* {% endif %}*/
 /*     <div class="container">*/
 /*         <h3>{{ post.title }}</h3>*/
 /*     </div>*/
@@ -166,8 +166,8 @@ class __TwigTemplate_6b7f0bb36f2f502fffa46e55ac1640af50d74fa4bfc306aef9ed2cb75fa
 /*                     <h5>{{ post.title }}</h5>*/
 /*                     <hr />*/
 /*                     <p><strong>{{ post.excerpt }}</strong></p>*/
-/*                     <p class="text-muted">{{ post.user.first_name }} {{ post.user.last_name }}</span>&nbsp;/&nbsp;{{ post.published_at|date('d-m-Y') }}</p>*/
-/*                     <a href="{{ 'blog/post'|page }}"><img class="img-responsive" src="{{ post.featured_images[0].path }}" data-src="{{ post.featured_images[0].path }}" alt=""></a>*/
+/*                     <p class="text-muted"><span>{{ post.user.first_name }} {{ post.user.last_name }}</span>&nbsp;/&nbsp;{{ post.published_at|date('d-m-Y') }}</p>*/
+/*                     <p class="featured-image"><a href="{{ 'blog/post'|page }}"><img class="img-responsive" src="{{ post.featured_images[0].path }}" data-src="{{ post.featured_images[0].path }}" alt=""></a></p>*/
 /*                     <div class="html-content">*/
 /*                         {{ post.content_html|raw }}*/
 /*                     </div>*/
@@ -185,21 +185,6 @@ class __TwigTemplate_6b7f0bb36f2f502fffa46e55ac1640af50d74fa4bfc306aef9ed2cb75fa
 /*                 </div>*/
 /*             {% endif %}*/
 /* */
-/*             <!-- Pagination -->*/
-/*             <!-- <ul class="pager pull-right">*/
-/*                 <li class="previous">*/
-/*                     <a href="#">*/
-/*                         <span class="fui-arrow-left"></span>*/
-/*                         Previous*/
-/*                     </a>*/
-/*                 </li>*/
-/*                 <li class="next">*/
-/*                     <a href="#">*/
-/*                         Next*/
-/*                         <span class="fui-arrow-right"></span>*/
-/*                     </a>*/
-/*                 </li>*/
-/*             </ul> -->*/
 /*             <div class="clearfix"></div>*/
 /* */
 /*         </div>*/

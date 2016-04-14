@@ -60,14 +60,14 @@ class __TwigTemplate_434a9e2e3946c8cb6efbdd0f4194eb1633015883f46a0059a46c36bcfff
                 // line 18
                 if (preg_match("{^<url>}", $this->getAttribute($context["image"], "description", array()))) {
                     // line 19
-                    echo "                            <a href=\"";
+                    echo "                                <a href=\"";
                     echo call_user_func_array($this->env->getFunction('html_strip')->getCallable(), array("strip", $this->getAttribute($context["image"], "description", array())));
                     echo "\" target=\"_blank\" title=\"\">
-                                <img class=\"banner-img\" src=\"";
+                                    <img class=\"banner-img\" src=\"";
                     // line 20
                     echo twig_escape_filter($this->env, $this->getAttribute($context["image"], "path", array()), "html", null, true);
                     echo "\" />
-                            </a>
+                                </a>
                             ";
                 } else {
                     // line 23
@@ -93,29 +93,28 @@ class __TwigTemplate_434a9e2e3946c8cb6efbdd0f4194eb1633015883f46a0059a46c36bcfff
 </section>
 
 <div class=\"container\">
-
     <div class=\"recent-tweets\">
         <h4 class=\"headline\"><span>Hot Nhất</span></h4>
 
         <!-- Hot posts -->
         ";
-        // line 39
+        // line 38
         if (($this->getAttribute((isset($context["posts"]) ? $context["posts"] : null), "count", array()) > 0)) {
-            // line 40
+            // line 39
             echo "            ";
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable(twig_slice($this->env, (isset($context["posts"]) ? $context["posts"] : null), 0, 2));
             foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
-                // line 41
+                // line 40
                 echo "                ";
                 $context["postUrl"] = $this->env->getExtension('System')->appFilter(((("news/" . $this->getAttribute($this->getAttribute($this->getAttribute($context["post"], "categories", array()), 0, array(), "array"), "slug", array())) . "/") . $this->getAttribute($context["post"], "slug", array())));
-                // line 42
+                // line 41
                 echo "
                 <div class=\"tweet\">
                     <i class=\"icon-rss\"></i>
                     <p>
                         <a href=\"";
-                // line 46
+                // line 45
                 echo twig_escape_filter($this->env, (isset($context["postUrl"]) ? $context["postUrl"] : null), "html", null, true);
                 echo "\">";
                 if ($this->getAttribute($context["post"], "excerpt", array())) {
@@ -125,7 +124,7 @@ class __TwigTemplate_434a9e2e3946c8cb6efbdd0f4194eb1633015883f46a0059a46c36bcfff
                 }
                 echo "</a>
                         <span>";
-                // line 47
+                // line 46
                 echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["post"], "published_at", array()), "d-m-Y"), "html", null, true);
                 echo "</span>
                     </p>
@@ -135,10 +134,10 @@ class __TwigTemplate_434a9e2e3946c8cb6efbdd0f4194eb1633015883f46a0059a46c36bcfff
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 51
+            // line 50
             echo "        ";
         }
-        // line 52
+        // line 51
         echo "
         <br />
 
@@ -146,39 +145,33 @@ class __TwigTemplate_434a9e2e3946c8cb6efbdd0f4194eb1633015883f46a0059a46c36bcfff
         <h4 class=\"headline\"><span>Tin Tức Mới Nhất</span></h4>
 
         ";
-        // line 58
+        // line 57
         if (($this->getAttribute((isset($context["posts"]) ? $context["posts"] : null), "count", array()) > 0)) {
-            // line 59
+            // line 58
             echo "            <div class=\"blog-roll\">
             ";
-            // line 60
+            // line 59
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable(twig_slice($this->env, (isset($context["posts"]) ? $context["posts"] : null), 2));
             foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
-                // line 61
+                // line 60
                 echo "                ";
-                $context["postUrl"] = $this->env->getExtension('System')->appFilter(((("news/" . $this->getAttribute($this->getAttribute($this->getAttribute($context["post"], "categories", array()), 0, array(), "array"), "slug", array())) . "/") . $this->getAttribute($context["post"], "slug", array())));
-                // line 62
-                echo "
-                ";
-                // line 63
                 $context['__cms_partial_params'] = [];
                 $context['__cms_partial_params']['post'] = $context["post"]                ;
                 echo $this->env->getExtension('CMS')->partialFunction("blog/blog-compact"                , $context['__cms_partial_params']                );
                 unset($context['__cms_partial_params']);
-                // line 64
+                // line 61
                 echo "            ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 65
+            // line 62
             echo "            </div>
         ";
         }
-        // line 67
+        // line 64
         echo "    </div>
-
 </div>
 
 <br />";
@@ -196,7 +189,7 @@ class __TwigTemplate_434a9e2e3946c8cb6efbdd0f4194eb1633015883f46a0059a46c36bcfff
 
     public function getDebugInfo()
     {
-        return array (  180 => 67,  176 => 65,  170 => 64,  165 => 63,  162 => 62,  159 => 61,  155 => 60,  152 => 59,  150 => 58,  142 => 52,  139 => 51,  129 => 47,  119 => 46,  113 => 42,  110 => 41,  105 => 40,  103 => 39,  90 => 28,  84 => 27,  80 => 25,  74 => 23,  68 => 20,  63 => 19,  61 => 18,  58 => 17,  52 => 14,  49 => 13,  47 => 12,  44 => 11,  41 => 10,  38 => 9,  35 => 8,  32 => 7,  29 => 6,  25 => 5,  19 => 1,);
+        return array (  174 => 64,  170 => 62,  164 => 61,  158 => 60,  154 => 59,  151 => 58,  149 => 57,  141 => 51,  138 => 50,  128 => 46,  118 => 45,  112 => 41,  109 => 40,  104 => 39,  102 => 38,  90 => 28,  84 => 27,  80 => 25,  74 => 23,  68 => 20,  63 => 19,  61 => 18,  58 => 17,  52 => 14,  49 => 13,  47 => 12,  44 => 11,  41 => 10,  38 => 9,  35 => 8,  32 => 7,  29 => 6,  25 => 5,  19 => 1,);
     }
 }
 /* <section class="home-title">*/
@@ -217,9 +210,9 @@ class __TwigTemplate_434a9e2e3946c8cb6efbdd0f4194eb1633015883f46a0059a46c36bcfff
 /*                     {% else %}*/
 /*                         <div class="home-slider__item">*/
 /*                             {% if ( image.description matches '{^<url>}' ) %}*/
-/*                             <a href="{{ html_strip(image.description) }}" target="_blank" title="">*/
-/*                                 <img class="banner-img" src="{{ image.path }}" />*/
-/*                             </a>*/
+/*                                 <a href="{{ html_strip(image.description) }}" target="_blank" title="">*/
+/*                                     <img class="banner-img" src="{{ image.path }}" />*/
+/*                                 </a>*/
 /*                             {% else %}*/
 /*                                 <img class="banner-img" src="{{ image.path }}" />*/
 /*                             {% endif %}*/
@@ -232,7 +225,6 @@ class __TwigTemplate_434a9e2e3946c8cb6efbdd0f4194eb1633015883f46a0059a46c36bcfff
 /* </section>*/
 /* */
 /* <div class="container">*/
-/* */
 /*     <div class="recent-tweets">*/
 /*         <h4 class="headline"><span>Hot Nhất</span></h4>*/
 /* */
@@ -259,14 +251,11 @@ class __TwigTemplate_434a9e2e3946c8cb6efbdd0f4194eb1633015883f46a0059a46c36bcfff
 /*         {% if posts.count > 0 %}*/
 /*             <div class="blog-roll">*/
 /*             {% for post in posts|slice(2) %}*/
-/*                 {% set postUrl = ( 'news/' ~ post.categories[0].slug ~ '/' ~ post.slug )|app %}*/
-/* */
 /*                 {% partial "blog/blog-compact" post=post %}*/
 /*             {% endfor %}*/
 /*             </div>*/
 /*         {% endif %}*/
 /*     </div>*/
-/* */
 /* </div>*/
 /* */
 /* <br />*/

@@ -170,20 +170,10 @@ class Gallery extends ComponentBase
         return Galleries::select('id', 'name')->orderBy('name')->get()->lists('name', 'id');
     }
 
-    public function onRun()
-    {
-        if($this->property('jqueryinject')=="yes")
-        {
-            $this->addJs('assets/js/jquery-1.9.1.min.js');
-        }
-        $this->addJs('assets/js/lightGallery.min.js');
-        $this->addCss('assets/style/lightGallery.css');
-    }
-
-    public function onRender()
-    {
+    public function onRun() {
         $gallery = new Galleries;
-        $this->gallery = $this->page['gallery'] = $gallery->where('id', '=', $this->property('idGallery'))->first();
+        // $this->gallery = $this->page['gallery'] = $gallery->where('id', '=', $this->property('idGallery'))->first();
+        $this->gallery = $this->page['gallery'] = $gallery->where('name', '=', $this->property('galleryName'))->first();
 
          // Inject all gallery properties to page.
         foreach ($this->getProperties() as $key => $value) {

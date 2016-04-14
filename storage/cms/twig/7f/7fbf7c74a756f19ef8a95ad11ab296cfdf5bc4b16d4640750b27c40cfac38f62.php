@@ -115,7 +115,7 @@ class __TwigTemplate_b76bb277572b0a0e9344d4d48bba6a7a7ea99b7c3ce5acadcf2ff853ed8
             echo "            ";
         } else {
             // line 41
-            echo "                <p class=\"no-posts\">Chưa có bài viết</p>
+            echo "                <p class=\"no-posts\">Không tìm thấy bài viết nào.</p>
             ";
         }
         // line 43
@@ -190,7 +190,7 @@ class __TwigTemplate_b76bb277572b0a0e9344d4d48bba6a7a7ea99b7c3ce5acadcf2ff853ed8
 /*                     prevPageUrl=posts.previousPageUrl()*/
 /*                 %}*/
 /*             {% else %}*/
-/*                 <p class="no-posts">Chưa có bài viết</p>*/
+/*                 <p class="no-posts">Không tìm thấy bài viết nào.</p>*/
 /*             {% endif %}*/
 /*             <div class="clearfix"></div>*/
 /*         </div>*/

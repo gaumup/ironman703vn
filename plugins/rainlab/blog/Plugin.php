@@ -43,7 +43,8 @@ class Plugin extends PluginBase
     {
         return [
             'blog' => [
-                'label'       => 'rainlab.blog::lang.blog.menu_label',
+                // 'label'       => 'rainlab.blog::lang.blog.menu_label',
+                'label'       => 'News',
                 'url'         => Backend::url('rainlab/blog/posts'),
                 'icon'        => 'icon-pencil',
                 'permissions' => ['rainlab.blog.*'],

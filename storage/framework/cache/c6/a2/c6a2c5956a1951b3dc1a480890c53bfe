@@ -1,0 +1,95 @@
+1460612876s:4532:"a:6:{s:5:"mtime";i:1460608365;s:7:"content";s:2163:"title = "Gallery"
+url = "/gallery"
+layout = "default"
+description = "Gallery page"
+
+[gallery]
+galleryName = "IronMan70.3Vietnam"
+==
+<section id="layout-title">
+    <div class="container">
+        <h3>Thư Viện</h3>
+    </div>
+</section>
+
+<div class="section-gallery">
+    <div class="container">
+        <div id="gallery-list" class="row">
+            {% for image in gallery.images %}
+                <div class="col-sm-4 col-xs-6">
+                    {% if ( image.description matches '{^<iframe}' ) %}
+                        {% set video = true %}
+                    {% endif %}
+
+                    <div class="gallery-list__item">
+                        <div class="gallery-list__item-wrapper">
+                            <img class="gallery-img" src="{{ 'assets/images/img1x1.gif'|theme }}" data-src="{{ image.path }}" alt="" title="{{ image.title }}" />
+
+                            <div class="gallery-list__item-info">
+                                <p class="gallery-item__cate">{{ gallery.name }}</p>
+
+                                <p class="gallery-item__name">{{ image.title }}</p>
+                                <p class="gallery-item__description">
+                                    {% if ( video == false ) %}
+                                        {{ str_limit( image.description, 50 ) }}
+                                    {% endif %}
+                                </p>
+
+                                <p class="gallery-item__exploring">
+                                    {% if ( video == false ) %}
+                                        <a data-key="{{ loop.index-1 }}" href="{{ image.path }}" title="" class="gallery-item__exploring--fullscreen"></a>
+                                    {% else %}
+                                        <a href="#watch" data-index="{{ loop.index }}" data-href="{{ image.description }}" title="" class="gallery-item__video"></a>
+                                    {% endif %}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>";s:7:"viewBag";a:0:{}s:8:"settings";a:5:{s:5:"title";s:7:"Gallery";s:3:"url";s:8:"/gallery";s:6:"layout";s:7:"default";s:11:"description";s:12:"Gallery page";s:10:"components";a:1:{s:7:"gallery";a:1:{s:11:"galleryName";s:18:"IronMan70.3Vietnam";}}}s:4:"code";N;s:6:"markup";s:2031:"<section id="layout-title">
+    <div class="container">
+        <h3>Thư Viện</h3>
+    </div>
+</section>
+
+<div class="section-gallery">
+    <div class="container">
+        <div id="gallery-list" class="row">
+            {% for image in gallery.images %}
+                <div class="col-sm-4 col-xs-6">
+                    {% if ( image.description matches '{^<iframe}' ) %}
+                        {% set video = true %}
+                    {% endif %}
+
+                    <div class="gallery-list__item">
+                        <div class="gallery-list__item-wrapper">
+                            <img class="gallery-img" src="{{ 'assets/images/img1x1.gif'|theme }}" data-src="{{ image.path }}" alt="" title="{{ image.title }}" />
+
+                            <div class="gallery-list__item-info">
+                                <p class="gallery-item__cate">{{ gallery.name }}</p>
+
+                                <p class="gallery-item__name">{{ image.title }}</p>
+                                <p class="gallery-item__description">
+                                    {% if ( video == false ) %}
+                                        {{ str_limit( image.description, 50 ) }}
+                                    {% endif %}
+                                </p>
+
+                                <p class="gallery-item__exploring">
+                                    {% if ( video == false ) %}
+                                        <a data-key="{{ loop.index-1 }}" href="{{ image.path }}" title="" class="gallery-item__exploring--fullscreen"></a>
+                                    {% else %}
+                                        <a href="#watch" data-index="{{ loop.index }}" data-href="{{ image.description }}" title="" class="gallery-item__video"></a>
+                                    {% endif %}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>";}";

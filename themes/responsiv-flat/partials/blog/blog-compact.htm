@@ -1,3 +1,4 @@
+{% set postUrl = ( 'news/' ~ post.categories[0].slug ~ '/' ~ post.slug )|app %}
 <div class="blog-compact">
     <a href="{{ postUrl }}">
         <div class="post-image" style="background-image: url({{ post.featured_images[0].path }}); background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;">

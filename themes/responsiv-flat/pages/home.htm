@@ -27,9 +27,9 @@ postsPerPage = 8
                     {% else %}
                         <div class="home-slider__item">
                             {% if ( image.description matches '{^<url>}' ) %}
-                            <a href="{{ html_strip(image.description) }}" target="_blank" title="">
-                                <img class="banner-img" src="{{ image.path }}" />
-                            </a>
+                                <a href="{{ html_strip(image.description) }}" target="_blank" title="">
+                                    <img class="banner-img" src="{{ image.path }}" />
+                                </a>
                             {% else %}
                                 <img class="banner-img" src="{{ image.path }}" />
                             {% endif %}
@@ -42,7 +42,6 @@ postsPerPage = 8
 </section>
 
 <div class="container">
-
     <div class="recent-tweets">
         <h4 class="headline"><span>Hot Nhất</span></h4>
 
@@ -69,14 +68,11 @@ postsPerPage = 8
         {% if posts.count > 0 %}
             <div class="blog-roll">
             {% for post in posts|slice(2) %}
-                {% set postUrl = ( 'news/' ~ post.categories[0].slug ~ '/' ~ post.slug )|app %}
-
                 {% partial "blog/blog-compact" post=post %}
             {% endfor %}
             </div>
         {% endif %}
     </div>
-
 </div>
 
 <br />

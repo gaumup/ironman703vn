@@ -5,13 +5,16 @@ description = "Default layout"
 <html>
     <head>
         <title>IronMan70.3Vietnam - {{ this.page.title }}</title>
-        <meta name="author" content="October CMS">
+        <meta charset="utf-8" />
+        <meta name="author" content="IronMan 70.3 Vietnam">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/png" href="{{ 'assets/images/october.png'|theme }}" />
         {% styles %}
         <link href="{{ [
             'assets/vendor/owl.carousel/css/owl.carousel.css',
             'assets/vendor/owl.carousel/css/owl.theme.css',
+            'assets/vendor/photoswipe/css/photoswipe.css',
+            'assets/vendor/photoswipe/default-skin/default-skin.css',
             'assets/css/theme.css',
         ]|theme }}" rel="stylesheet">
     </head>
@@ -33,6 +36,8 @@ description = "Default layout"
         <footer id="layout-footer">
             {% partial "footer" %}
         </footer>
+
+        {% partial "gallery-popup" %}
 
         <!-- Scripts -->
         <script src="{{ [
@@ -56,6 +61,8 @@ description = "Default layout"
             'assets/vendor/flat-ui/js/jquery.tagsinput.js',
             'assets/vendor/flat-ui/js/jquery.placeholder.js',
             'assets/vendor/owl.carousel/js/owl.carousel.min.js',
+            'assets/vendor/photoswipe/js/photoswipe.js',
+            'assets/vendor/photoswipe/js/photoswipe-ui-default.js',
             'assets/javascript/app.js',
         ]|theme }}"></script>
         {% framework extras %}

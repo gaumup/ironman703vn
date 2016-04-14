@@ -141,6 +141,8 @@ class Posts extends ComponentBase
             if ($currentPage > ($lastPage = $this->posts->lastPage()) && $currentPage > 1)
                 return Redirect::to($this->currentPageUrl([$pageNumberParam => $lastPage]));
         }
+
+        $this->page['searchQuery'] = get('s');
     }
 
     protected function prepareVars()
@@ -166,7 +168,8 @@ class Posts extends ComponentBase
             'page'       => $this->property('pageNumber'),
             'sort'       => $this->property('sortOrder'),
             'perPage'    => $this->property('postsPerPage'),
-            'category'   => $category
+            'category'   => $category,
+            'search'     => get('s')
         ]);
 
         /*
