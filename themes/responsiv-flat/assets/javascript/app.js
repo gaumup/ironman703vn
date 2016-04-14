@@ -19,6 +19,7 @@
         if ( screenWidth <= 667 ) {
             var fgameScale = screenWidth/601;
             fgame.css({
+                'width': '601px',
                 'transform': 'scale(' + fgameScale + ')',
                 '-moz-transform': 'scale(' + fgameScale + ')',
                 '-webkit-transform': 'scale(' + fgameScale + ')'
@@ -29,6 +30,7 @@
         }
         else {
             fgame.css({
+                'width': '611px',
                 'transform': 'scale(1)',
                 '-moz-transform': 'scale(1)',
                 '-webkit-transform': 'scale(1)'

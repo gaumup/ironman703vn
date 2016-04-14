@@ -9016,7 +9016,7 @@ fieldset[disabled] .input-group-btn .btn-default.active {
 }
 @media (max-width: 767px) {
   .navbar-collapse .navbar-nav.navbar-right:last-child {
-    margin-bottom: 3px;
+    /*margin-bottom: 3px;*/
   }
 }
 .container > .navbar-header,
@@ -9400,7 +9400,7 @@ select[multiple].navbar-form .btn {
       text-align: center;
     }
     .navbar-inverse .navbar-nav > li > a {
-      padding: 30px 20px;
+      padding: 15px 20px;
     }
 }
 .active .navbar-unread,
@@ -12454,6 +12454,12 @@ body.page-ui-elements .demo-swatches-row .swatches-desc-col {
       color: #fff;
       line-height: 150%;
     }
+@media screen and (max-width: 480px) {
+  .page-blog-post #layout-title .container h3 {
+    font-size: 30px;
+    padding: 40px 0 20px;
+  }
+}
 .blog-roll {
   width: calc( 100% + 20px );
   margin-left: -10px;
@@ -13029,7 +13035,7 @@ body.cover-layout #layout-footer {
   }
 }
 body {
-  padding-top: 96px;
+  padding-top: 94px;
   /*background-color: #34495e;*/
 }
 header#layout-header .navbar-brand {
@@ -13494,7 +13500,7 @@ header#layout-header .navbar-brand {
       top: 0;
       left: 0;
       transform-origin: 0 0;
-      width: 601px;
+      width: 100%;
       height: 401px;
       display: block;
       border: none;
@@ -13818,6 +13824,10 @@ header#layout-header .navbar-brand {
 }
 .html-content a {
   color: #f15b25;
+}
+.html-content img,
+.blog-desc img {
+  max-width: 100%;
 }
 .blog-desc img {
   margin: 40px auto;
