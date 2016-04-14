@@ -1,0 +1,9 @@
+1460623742s:621:"a:6:{s:5:"mtime";i:1460563959;s:7:"content";s:223:"title = "Games"
+url = "/games"
+layout = "default"
+==
+<div class="games-wrapper">
+    <iframe id="fgame" width="601" height="401" src="https://www.vng.com.vn/ironman-game/" frameborder="0" allowfullscreen=""></iframe>
+</div>";s:7:"viewBag";a:0:{}s:8:"settings";a:4:{s:5:"title";s:5:"Games";s:3:"url";s:6:"/games";s:6:"layout";s:7:"default";s:10:"components";a:0:{}}s:4:"code";N;s:6:"markup";s:170:"<div class="games-wrapper">
+    <iframe id="fgame" width="601" height="401" src="https://www.vng.com.vn/ironman-game/" frameborder="0" allowfullscreen=""></iframe>
+</div>";}";
