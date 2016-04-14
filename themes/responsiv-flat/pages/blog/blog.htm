@@ -21,7 +21,7 @@ postsPerPage = 8
                 {% for post in posts %}
                     {% set postUrl = ( 'news/' ~ post.categories[0].slug ~ '/' ~ post.slug )|app %}
                     <div class="blog">
-                        <img src="{{ post.user.avatar.path|app }}" alt="">
+                        <img src="{{ post.user.avatar.path }}" alt="">
                         <div class="blog-desc">
                             <h5>
                                 <a href="{{ postUrl }}">{{ post.title }}</a>
