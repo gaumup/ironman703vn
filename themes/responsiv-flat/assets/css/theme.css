@@ -63,10 +63,12 @@ abbr[title] {
 }
 b,
 strong {
-  font-weight: bold;
+  font-weight: normal;
+  font-family: 'proxima_nova_bold';
 }
 dfn {
-  font-style: italic;
+  /*font-style: italic;*/
+  font-family: 'lato_italic';
 }
 h1 {
   font-size: 2em;
@@ -183,7 +185,8 @@ textarea {
   overflow: auto;
 }
 optgroup {
-  font-weight: bold;
+  /*font-weight: bold;*/
+  font-family: 'proxima_nova_bold';
 }
 table {
   border-collapse: collapse;
@@ -369,7 +372,8 @@ h6,
 .h5,
 .h6 {
   font-family: inherit;
-  font-weight: 700;
+  font-family: 'proxima_nova_bold';
+  font-weight: normal;
   line-height: 1.1;
   color: inherit;
 }
@@ -642,7 +646,8 @@ dd {
   line-height: 1.428571429;
 }
 dt {
-  font-weight: bold;
+  /*font-weight: bold;*/
+  font-family: 'proxima_nova_bold';
 }
 dd {
   margin-left: 0;
@@ -1798,7 +1803,8 @@ legend {
 label {
   display: inline-block;
   margin-bottom: 5px;
-  font-weight: bold;
+  /*font-weight: bold;*/
+  font-family: 'proxima_nova_bold';
 }
 input[type="search"] {
   -webkit-box-sizing: border-box;
@@ -4150,7 +4156,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   display: inline;
   padding: .2em .6em .3em;
   font-size: 75%;
-  font-weight: bold;
+  /*font-weight: bold;*/
+  font-family: 'proxima_nova_bold';
   line-height: 1;
   color: #ffffff;
   text-align: center;
@@ -4218,7 +4225,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   min-width: 10px;
   padding: 3px 7px;
   font-size: 16px;
-  font-weight: bold;
+  /*font-weight: bold;*/
+  font-family: 'proxima_nova_bold';
   color: #ffffff;
   line-height: 1;
   vertical-align: baseline;
@@ -4326,7 +4334,8 @@ a.thumbnail.active {
   color: inherit;
 }
 .alert .alert-link {
-  font-weight: bold;
+  /*font-weight: bold;*/
+  font-family: 'proxima_nova_bold';
 }
 .alert > p,
 .alert > ul {
@@ -4952,7 +4961,8 @@ a.list-group-item-danger.active:focus {
 .close {
   float: right;
   font-size: 27px;
-  font-weight: bold;
+  /*font-weight: bold;*/
+  font-family: 'proxima_nova_bold';
   line-height: 1;
   color: #34495e000;
   text-shadow: 0 1px 0 #ffffff;
@@ -10955,7 +10965,8 @@ fieldset[disabled] .twitter-typeahead .tt-hint {
 }
 .palette dt {
   display: block;
-  font-weight: bold;
+  /*font-weight: bold;*/
+  font-family: 'proxima_nova_bold';
   opacity: 0.8;
   filter: alpha(opacity=80);
 }
@@ -11445,31 +11456,17 @@ you can use the generic selector below, but it's slower:
   content: "\e05b";
 }
 @font-face {
-  font-family: 'lato';
-  src: url('../fonts/lato-black-webfont.eot');
-  src: url('../fonts/lato-black-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/lato-black-webfont.svg#latoblack') format('svg'), url('../fonts/lato-black-webfont.woff') format('woff'), url('../fonts/lato-black-webfont.ttf') format('truetype');
-  font-weight: 700;
+  font-family: 'proxima_nova_bold';
+  src: url('../fonts/mark-simonson-proxima-nova-bold-.woff') format('woff'),
+        url('../fonts/mark-simonson-proxima-nova-bold-.ttf') format('truetype');
+  font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'lato';
-  src: url('../fonts/lato-italic-webfont.eot');
-  src: url('../fonts/lato-italic-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/lato-italic-webfont.svg#latoitalic') format('svg'), url('../fonts/lato-italic-webfont.woff') format('woff'), url('../fonts/lato-italic-webfont.ttf') format('truetype');
-  font-weight: 400;
-  font-style: italic;
-}
-@font-face {
-  font-family: 'lato';
-  src: url('../fonts/lato-regular-webfont.eot');
-  src: url('../fonts/lato-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/lato-regular-webfont.svg#latoregular') format('svg'), url('../fonts/lato-regular-webfont.woff') format('woff'), url('../fonts/lato-regular-webfont.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'lato';
-  src: url('../fonts/lato-light-webfont.eot');
-  src: url('../fonts/lato-light-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/lato-light-webfont.svg#latolight') format('svg'), url('../fonts/lato-light-webfont.woff') format('woff'), url('../fonts/lato-light-webfont.ttf') format('truetype');
-  font-weight: 300;
+  font-family: 'proxima_nova';
+  src: url('../fonts/mark-simonson-proxima-nova-regular-webfont.woff') format('woff'),
+        url('../fonts/mark-simonson-proxima-nova-regular-webfont.ttf') format('truetype');
+  font-weight: normal;
   font-style: normal;
 }
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
@@ -11714,7 +11711,8 @@ blockquote small,
 blockquote .small {
   font-size: 18px;
   line-height: 1.428571429;
-  font-style: italic;
+  /*font-style: italic;*/
+  font-family: 'lato_italic';
   color: inherit;
 }
 blockquote small:before,
@@ -12635,7 +12633,8 @@ body.page-ui-elements .demo-swatches-row .swatches-desc-col {
   text-decoration: line-through;
 }
 .shop-product .price .new {
-  font-weight: bold;
+  /*font-weight: bold;*/
+  font-family: 'proxima_nova_bold';
 }
 .shop-item .shop-images {
   position: relative;
@@ -12800,7 +12799,8 @@ body.page-ui-elements .demo-swatches-row .swatches-desc-col {
   position: absolute;
   bottom: 20px;
   left: 20px;
-  font-weight: bold;
+  /*font-weight: bold;*/
+  font-family: 'proxima_nova_bold';
   color: #fff;
   display: none;
 }
